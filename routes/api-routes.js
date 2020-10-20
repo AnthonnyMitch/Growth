@@ -1,6 +1,13 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const fetch = require('node-fetch');
+
+(async () => {
+  const response = await fetch('https://trefle.io/api/v1/plants?token=ueH6QtDHJicmWkAqaQBbzH12C_hf4rpSxtJXrMOE1n0');
+  const json = await response.json();
+  console.log(json);
+})();
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -13,6 +20,7 @@ module.exports = function(app) {
       id: req.user.id
     });
   });
+
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
