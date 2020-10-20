@@ -1,0 +1,31 @@
+Growth: An interative application in which a user can log in to their personal profile, search plants using their common or scientific name, and get data returned from the trefle plants API and the USDA Complete PLANTS Checklist Database such as:
+- Scientific name, 
+- Family 
+- Common name
+- Species
+- Sub species
+- Climate preference
+- Growing instructions
+- The plant's image
+- links to similar plants.
+
+There will also be an option for the user to save plants to their profile and retrieve them at a later date.
+
+We are also aiming to use a map API to show locations nearby the user where they are able to purchase plants.
+
+
+Burndown Schedule:
+
+Tuesday 10/20-Set up project, get idea approved, gain access key for api, and find and download db.
+
+Wednesday 10/21-Begin front end development, create and ensure login page is working, ensure both api and database are returning an object, and parse the data so it is rendered onto to page.
+
+Thursday 10/22-Complete front end development and layout of the main page, decide which parsed data will be returned, and where it will render within the page.
+
+Friday 10/23-Today will be spent ensuring all functionality is being returned correctly and all data is being parsed from the object to the correct location on the page.
+
+Saturday 10/24-Debug and finalize all CSS and functionality.
+
+Sunday 10/25-Fix any remaining issues, ensure the application is properly deployed, and create powerpoint for project presentation.
+
+Monday 10/26-Present and turn in completed project.
