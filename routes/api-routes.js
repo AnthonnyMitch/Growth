@@ -6,7 +6,6 @@ const fetch = require('node-fetch');
 (async () => {
   const response = await fetch('https://trefle.io/api/v1/plants?token=ueH6QtDHJicmWkAqaQBbzH12C_hf4rpSxtJXrMOE1n0');
   const json = await response.json();
-  console.log(json);
 })();
 
 module.exports = function(app) {
