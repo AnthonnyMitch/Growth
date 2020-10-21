@@ -1,10 +1,13 @@
-{
-  "development": {
 
-    "username": "fy7pbbrkyw1tptn9",
-    "password": "d5vaee9zjw5kvqp0",
-    "database": "ut8hr2ydzksiu277",
-    "host": "vrk7xcrab1wsx4r1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+require('dotenv').config();
+
+module.exports = {
+  "development": {
+    
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASS,
+    "database": "plants",
+    "host": process.env.DB_HOST,
 
     "dialect": "mysql"
   },
