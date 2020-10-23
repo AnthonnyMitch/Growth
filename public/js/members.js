@@ -6,40 +6,37 @@ $(document).ready(() => {
   });
 });
 
-$(document).ready(() => {
-  // Getting references to our form and input
-  const searchForm = $("form.search");
-  const searchInput = $("input#search-input");
+//when the search button is clicked
+$("#search-button").on("click", function (e) {
+  e.preventDefault();
+  //set a variable equal to the user's search-value input
+  var searchValue = $("#search-value").val();
 
-  // When the signup button is clicked, we validate the email and password are not blank
-  searchForm.on("submit", event => {
-      event.preventDefault();
-      const searchData = {
-          search: searchInput.val().trim(),
-      };
-      console.log(searchData);
+  //take the searchValue variable and pass into to the searchPlants function, which is being called here
+  searchPlants(searchValue);
 
-      //send searchData value and call a function that searches through database and returns matching values
+  // clear input box
+  // $("#search-value").val("");
+});
+
+
+//this is a function called searchPlants and we have passed the searchValue variable data into it
+function searchPlants(searchValue) {
+
+  //we then call the api and pass the searchValue into the url
+  $.ajax({
+
+    method: "GET",
+    url:  "https://cors-anywhere.herokuapp.com/https://trefle.io/api/v1/species/search?q=" + searchValue + "&token=ueH6QtDHJicmWkAqaQBbzH12C_hf4rpSxtJXrMOE1n0",
+
+    //then start a function with the response object passed in
+  }).then(function (response) {
+    console.log(response);
+
+    //select the object with an index of 0 and return it's entire object (data: 0)
+
+    //pull data from that object
   })
-  $("#search-input").on("click", function(event) {
-    event.preventDefault();
-  
-    // Make a newPlant object
-    var newPlant = {
-      column4: $("#name").val().trim(),
-    };
-  
-    // Send an AJAX POST-request with jQuery
-    $.post("/api/new", newPlant)
-      // On success, run the following code
-      .then(function(data) {
-        // Log the data we found
-        console.log(data);
-      });
-  
-    // Empty each input box by replacing the value with an empty string
-    $("#name").val("");
+}
 
-});
 
-});
