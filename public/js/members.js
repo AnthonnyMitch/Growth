@@ -21,5 +21,25 @@ $(document).ready(() => {
 
       //send searchData value and call a function that searches through database and returns matching values
   })
+  $("#search-input").on("click", function(event) {
+    event.preventDefault();
+  
+    // Make a newPlant object
+    var newPlant = {
+      column4: $("#name").val().trim(),
+    };
+  
+    // Send an AJAX POST-request with jQuery
+    $.post("/api/new", newPlant)
+      // On success, run the following code
+      .then(function(data) {
+        // Log the data we found
+        console.log(data);
+      });
+  
+    // Empty each input box by replacing the value with an empty string
+    $("#name").val("");
+
+});
 
 });
