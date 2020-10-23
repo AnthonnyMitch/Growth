@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>GROWTH</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
   <link href="stylesheets/style.css" rel="stylesheet">
+  
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -20,6 +21,132 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+<!-- Google Fonts Roboto -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Material Design Bootstrap -->
+<link rel="stylesheet" href="css/mdb.min.css">
+
+<!-- Your custom styles (optional) -->
+<link rel="stylesheet" href="css/style.css">
+
+<body>
+  <style>
+    html,
+    body,
+    header,
+    .view {
+      height: 100%;
+    }
+
+    @media (max-width: 740px) {
+
+      html,
+      body,
+      header,
+      .view {
+        height: 100vh;
+      }
+    }
+
+    .top-nav-collapse {
+      background-color: #000000 !important;
+    }
+
+    .navbar:not(.top-nav-collapse) {
+      background: transparent !important;
+    }
+
+    @media (max-width: 991px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #000000 !important;
+      }
+    }
+
+    h1 {
+      letter-spacing: 8px;
+    }
+
+    h5 {
+      letter-spacing: 3px;
+    }
+
+    .hr-light {
+      border-top: 3px solid #fff;
+      width: 80px;
+    }
+  </style>
+
+  <!-- Main navigation -->
+  <header>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#"><strong>GROWTH</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+          aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#About">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">My account</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar -->
+    <!-- Full Page Intro -->
+    <div class="view jarallax" data-jarallax='{"speed": 0.2}'
+      style="background-image: url(./img/m-x9NfeD3FpsE-unsplash.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <!-- Mask & flexbox options-->
+      <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+        <!-- Content -->
+        <div class="container">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-md-12 mb-4 white-text text-center">
+              <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown"
+                data-wow-delay="0.3s"><strong>Let's Growth together</strong></h1>
+              <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.8s">
+              <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Search for any
+                  species of plants and get a full report on how to growth them, best weather conditions , and much more
+                </strong></h5>
+
+              <br>
+
+              <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+                <button id="search-button"><i class="fas fa-search " aria-hidden="true"></i></button>
+                <input id="search-value" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search "
+                  aria-label="Search" style="color: white;">
+              </form>
+            </div>
+
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Content -->
+      </div>
+      <!-- Mask & flexbox options-->
+
 <body 
  style="background-image: url(../img/vector.jpg);
  background-repeat: no-repeat; background-position: center center;">
@@ -29,27 +156,350 @@
       <a class="navbar-brand" href="/logout">
         Logout
       </a>
+
     </div>
-  </div>
-</nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
+    <!-- Full Page Intro -->
+  </header>
+
+  <div class="container my-5 p-5 z-depth-1 black">
+
+
+    <!--Section: Content-->
+    <section class="text-center white-text" id= "About">
+
+      <!-- Section heading -->
+      <h2 class="font-weight-bold mb-4 pb-2 text-uppercase">Mission Statement</h2>
+      <!-- Section description -->
+      <p class="lead mx-auto mb-5">We believe in inspiring our customers to fulfill their destiny as enthusiastic plant
+        nerds and observant naturalists. We cultivate our staff, clients, and neighbors to develop the ever more vital
+        primordial bond between humans and plants.</p>
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-4 mb-4">
+
+          <i class="fas fa-brain fa-3x green-text"></i>
+          <h5 class="font-weight-bold my-4 text-uppercase">Learn</h5>
+          <p class="mb-md-0 mb-5">Here in GROWTH our users are going to be able to research any species of plants, and
+            we will provide a full report about your choices explaning every possible detail.
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 mb-4">
+
+          <i class="fas fa-leaf fa-3x green-text"></i>
+          <h5 class="font-weight-bold my-4 text-uppercase">Created</h5>
+          <p class="mb-md-0 mb-5"> Users are going to be able to create their own garden by saving their searches, and
+            it would be display on their profile to have a better pictures of their dream garden.
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 mb-4">
+
+          <i class="fas fa-user-circle fa-3x green-text"></i>
+          <h5 class="font-weight-bold my-4 text-uppercase">Flourish</h5>
+          <p class="mb-0">Add, deleted , and update your garden. Our users are going to be able to updated their garden
+            and see it growth.
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
       </div>
-    </div>
+      <!-- Grid row -->
+
+    </section>
+    <!--Section: Content-->
+
+
   </div>
 
-  <h2>Search Form</h2>
-  <form class="search">
-    <div class="form-group">
-      <label for="exampleSearch">Enter Search</label>
-      <input type="text" class="form-control" id="search-input" placeholder="Search">
-    <button type="submit" class="btn btn-default">Search</button>
-        
-    </div>
-        </form>
 
+  <div class="container mt-5">
+
+
+    <!--Section: Content-->
+    <section class="text-center white-text">
+
+      <!-- Section heading -->
+      <h3 class="font-weight-bold mb-4 pb-2">Our Team</h3>
+      <!-- Section description -->
+      <h3 class="text-center w-responsive mx-auto mb-5"><b>Growth is intregated with a team of highly trained sofware
+          engineers. Here is our team</b></h3>
+      <!-- Grid row -->
+      <div class="row">
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <!--Card-->
+          <div class="card testimonial-card">
+            <!--Background color-->
+            <div class="card-up info-color"></div>
+            <!--Avatar-->
+            <div class="avatar mx-auto white">
+              <img src="./img/igor-son-FV_PxCqgtwc-unsplash.jpg" class="rounded-circle img-fluid">
+            </div>
+            <div class="card-body">
+              <!--Name-->
+              <h4 class="font-weight-bold mb-4" style="color:black;">Anthonny R.</h4>
+              <hr>
+              <!--Quotation-->
+              <p class="black-text mt-4"> Full-Stack Developer</p>
+              <a href=”https://github.com/AnthonnyMitch” target=”_blank”>Github profile</a>
+            </div>
+          </div>
+          <!--Card-->
+        </div>
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <!--Card-->
+          <div class="card testimonial-card">
+            <!--Background color-->
+            <div class="card-up info-color"></div>
+            <!--Avatar-->
+            <div class="avatar mx-auto white">
+              <img src="./img/igor-son-FV_PxCqgtwc-unsplash.jpg" class="rounded-circle img-fluid">
+            </div>
+            <div class="card-body">
+              <!--Name-->
+              <h4 class="font-weight-bold mb-4" style="color:black;">Alyssa De Metro</h4>
+              <hr>
+              <!--Quotation-->
+              <p class="black-text mt-4"> Full-Stack Developer</p>
+              <a href=”https://github.com/leanndemetro” target=”_blank”>Github profile</a>
+            </div>
+          </div>
+          <!--Card-->
+        </div>
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <!--Card-->
+          <div class="card testimonial-card">
+            <!--Background color-->
+            <div class="card-up blue-gradient">
+            </div>
+            <!--Avatar-->
+            <div class="avatar mx-auto white">
+              <img src="./img/igor-son-FV_PxCqgtwc-unsplash.jpg" class="rounded-circle img-fluid">
+            </div>
+            <div class="card-body">
+              <!--Name-->
+              <h4 class="font-weight-bold mb-4 " style="color:black;">Vinson Centuro</h4>
+              <hr>
+              <!--Quotation-->
+              <p class="black-text mt-4"> Full-Stack Developer</p>
+              <a href=”https://github.com/VinsonCernuto” target=”_blank”>Github profile</a>
+            </div>
+          </div>
+          <!--Card-->
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <!--Card-->
+          <div class="card testimonial-card">
+            <!--Background color-->
+            <div class="card-up indigo"></div>
+            <!--Avatar-->
+            <div class="avatar mx-auto white">
+              <img src="./img/igor-son-FV_PxCqgtwc-unsplash.jpg" class="rounded-circle img-fluid">
+            </div>
+            <div class="card-body">
+              <!--Name-->
+              <h4 class="font-weight-bold mb-4" style="color:black;">Lazaro Guzman</h4>
+              <hr>
+              <!--Quotation-->
+              <p class="black-text mt-4"> Full-Stack Developer</p>
+              <a href=”https://github.com/theoddpandaj” target=”_blank”>Github profile</a>
+            </div>
+          </div>
+          <!--Card-->
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!-- Grid row -->
+
+    </section>
+    <!--Section: Content-->
+
+
+  </div>
+
+  <div class="container my-5">
+
+
+    <!--Section: Content-->
+    <section class="contact-section dark-grey-text mb-5">
+
+      <style>
+        .contact-section .form .btn-floating {
+          left: 3px;
+        }
+      </style>
+
+      <!-- Form with header -->
+      <div class="card">
+
+        <!-- Grid row -->
+        <div class="row">
+
+          <!-- Grid column -->
+          <div class="col-lg-8">
+
+            <div class="card-body form">
+
+              <!-- Header -->
+              <h3 class="font-weight-bold dark-grey-text mt-4"><i class="fas fa-envelope pr-2 mr-1"></i>Write to us:
+              </h3>
+
+              <!-- Grid row -->
+              <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <input type="text" id="form-contact-name" class="form-control">
+                    <label for="form-contact-name" class="">Your name</label>
+                  </div>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <input type="text" id="form-contact-email" class="form-control">
+                    <label for="form-contact-email" class="">Your email</label>
+                  </div>
+                </div>
+                <!-- Grid column -->
+
+              </div>
+              <!-- Grid row -->
+
+              <!-- Grid row -->
+              <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <input type="text" id="form-contact-phone" class="form-control">
+                    <label for="form-contact-phone" class="">Your phone</label>
+                  </div>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-6">
+                  <div class="md-form mb-0">
+                    <input type="text" id="form-contact-company" class="form-control">
+                    <label for="form-contact-company" class="">Your company</label>
+                  </div>
+                </div>
+                <!-- Grid column -->
+
+              </div>
+              <!-- Grid row -->
+
+              <!-- Grid row -->
+              <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-12">
+                  <div class="md-form mb-0">
+                    <textarea id="form-contact-message" class="form-control md-textarea" rows="3"></textarea>
+                    <label for="form-contact-message">Your message</label>
+                    <a class="btn-floating btn-lg black">
+                      <i class="far fa-paper-plane"></i>
+                    </a>
+                  </div>
+                </div>
+                <!-- Grid column -->
+
+              </div>
+              <!-- Grid row -->
+
+            </div>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-lg-4">
+
+            <div class="card-body contact text-center h-100 white-text" style="background-color: black">
+
+              <h3 class="font-weight-bold my-4 pb-2">Contact information</h3>
+              <ul class="text-lg-left list-unstyled ml-4">
+                <li>
+                  <p><i class="fas fa-map-marker-alt pr-2"></i>Florida, 32839, USA</p>
+                </li>
+                <li>
+                  <p><i class="fas fa-phone pr-2 "></i>+ 01 234 567 89</p>
+                </li>
+                <li>
+                  <p><i class="fas fa-envelope pr-2"></i>contact@growth.com</p>
+                </li>
+              </ul>
+              <hr class="hr-light my-4">
+              <ul class="list-inline text-center list-unstyled">
+                <li class="list-inline-item">
+                  <a class="p-2 fa-lg tw-ic">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="p-2 fa-lg li-ic">
+                    <i class="fab fa-linkedin-in"> </i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="p-2 fa-lg ins-ic">
+                    <i class="fab fa-instagram"> </i>
+                  </a>
+                </li>
+              </ul>
+
+            </div>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+      </div>
+      <!-- Form with header -->
+
+    </section>
+    <!--Section: Content-->
+
+
+
+
+   
+
+</body>
+
+</html>
+ 
+ <!-- jQuery -->
+ <script type="text/javascript" src="jsMDB/jquery.min.js"></script>
+ <!-- Bootstrap tooltips -->
+ <script type="text/javascript" src="jsMDB/popper.min.js"></script>
+ <!-- Bootstrap core JavaScript -->
+ <script type="text/javascript" src="jsMDB/bootstrap.min.js"></script>
+ <!-- MDB core JavaScript -->
+ <script type="text/javascript" src="jsMDB/mdb.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
 
