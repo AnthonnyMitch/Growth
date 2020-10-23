@@ -33,5 +33,4 @@
                      [theoddpandaj](https://github.com/theoddpandaj)
   <br />
   <br />
-  ✉️ Email me with any questions: undefined<br /><br />
   _This README was generated with by [README-generator](https://github.com/VinsonCernuto/Good-ReadME) _
