@@ -58,4 +58,19 @@ module.exports = function(app) {
       });
     }
   });
+
+  // Get all plants
+  app.get("/api/all", function(req, res) {
+    db.Plant.findAll({}).then(function(results) {
+      console.log(results)
+      res.json(results);
+    });
+  });
+  //get one plant from search form
+  app.get("/api/:plantName", function(req, res) {
+    db.Plant.findAll({where:{commonName:req.params.plantName}}).then(function(results) {
+      console.log(results)
+      res.json(results);
+    });
+  });
 };

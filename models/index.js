@@ -33,12 +33,6 @@ Object.keys(db).forEach(function (modelName) {
   }
 });
 
-var plant_db = sequelize.define("plant", {
-  collumn4: Sequelize.STRING,
-});
-
-// Syncs with DB
-plant_db.sync();
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

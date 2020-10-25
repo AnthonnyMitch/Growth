@@ -6,15 +6,13 @@ $(document).ready(() => {
   });
 });
 
-//when the search button is clicked
 $("#search-button").on("click", function (e) {
   e.preventDefault();
   //set a variable equal to the user's search-value input
   var searchValue = $("#search-value").val();
-
+  console.log(searchValue);
   //take the searchValue variable and pass into to the searchPlants function, which is being called here
   searchPlants(searchValue);
-
   // clear input box
   // $("#search-value").val("");
 });
@@ -38,5 +36,3 @@ function searchPlants(searchValue) {
     //pull data from that object
   })
 }
-
-
