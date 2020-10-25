@@ -58,4 +58,11 @@ module.exports = function(app) {
       });
     }
   });
+
+  // Get all plants
+  app.get("/api/all", function(req, res) {
+    plant.findAll({}).then(function(results) {
+      res.json(results);
+    });
+  });
 };
