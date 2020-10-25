@@ -33,14 +33,6 @@ Object.keys(db).forEach(function (modelName) {
   }
 });
 
-var plants = sequelize.define("plant", {
-  commonName: Sequelize.STRING,
-  familyName: Sequelize.STRING,
-  scientificNameWithAuthor: Sequelize.STRING,
-});
-
-// Syncs with DB
-plants.sync();
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

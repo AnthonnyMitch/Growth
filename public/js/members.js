@@ -6,21 +6,15 @@ $(document).ready(() => {
   });
 });
 
-$("#search-btn").on("click", function(event) {
-  event.preventDefault();
-
-  // Save the plant they typed into the plant-search input
-  var plantSearched = $("#plant-search").val().trim();
-
-  // Make an AJAX get request to our api, including the user's plant in the url
-  $.get("/api/" + plantSearched, function(data) {
-
-    console.log(data);
-    // Call our renderPlants function to add our plants to the page
-    renderPlants(data);
-
-  });
-
+$("#search-button").on("click", function (e) {
+  e.preventDefault();
+  //set a variable equal to the user's search-value input
+  var searchValue = $("#search-value").val();
+  console.log(searchValue);
+  //take the searchValue variable and pass into to the searchPlants function, which is being called here
+  searchPlants(searchValue);
+  // clear input box
+  // $("#search-value").val("");
 });
 
 
