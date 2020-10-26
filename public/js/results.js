@@ -4,6 +4,7 @@ $("#search-button").on("click", function (e) {
     $("#plantImage").html("")
     $("#commonName").html("")
     $("#scientificName").html("")
+    $("#familyName").html("")
     
 
     //set a variable equal to the user's search-value input
