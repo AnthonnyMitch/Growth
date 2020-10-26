@@ -17,7 +17,17 @@
   
   
   ## Usage
-  
+  <img src="public\img\screenshots\Capture.PNG">
+
+  <img src="public\img\screenshots\members.PNG">
+
+  <img src="public\img\screenshots\aboutus.PNG">
+
+  <img src="public\img\screenshots\search.PNG">
+
+  <img src="public\img\screenshots\results.PNG">
+
+
   
   ## License
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
