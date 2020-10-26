@@ -5,7 +5,7 @@ module.exports = {
   "development": {
     
     "username": "root",
-    "password": "Milodali2218",
+    "password": "Candolio94*",
     "database": "plants",
     "host": "localhost",
 
