@@ -1,0 +1,218 @@
+<body>
+
+
+    <style>
+        html,
+        body,
+        header,
+        .view {
+            height: 100%;
+        }
+
+        @media (max-width: 740px) {
+
+            html,
+            body,
+            header,
+            .view {
+                height: 100vh;
+            }
+        }
+
+        .top-nav-collapse {
+            background-color: #000000 !important;
+        }
+
+        .navbar:not(.top-nav-collapse) {
+            background: transparent !important;
+        }
+
+        @media (max-width: 991px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #000000 !important;
+            }
+        }
+
+        h1 {
+            letter-spacing: 8px;
+        }
+
+        h5 {
+            letter-spacing: 3px;
+        }
+
+        .hr-light {
+            border-top: 3px solid #fff;
+            width: 80px;
+        }
+    </style>
+
+    <!-- Main navigation -->
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="./members"><strong>GROWTH</strong></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./members">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./results">Search</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar -->
+        <!-- Full Page Intro -->
+        <div class="view jarallax" data-jarallax='{"speed": 0.2}'
+            style="background-image: url(./img/bence-balla-schottner-K2DEP6VRB4Q-unsplash.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+                <!-- Content -->
+                <div class="container">
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class="col-md-12 mb-4 white-text text-center">
+                            <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown"
+                                data-wow-delay="0.3s"><strong>Grow your garden and expand your knowledge</strong></h1>
+                            <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.8s">
+
+                            <br>
+
+                        </div>
+
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </div>
+                <!-- Content -->
+            </div>
+            <!-- Mask & flexbox options-->
+        </div>
+        <!-- Full Page Intro -->
+    </header>
+
+    <!-- Garden cards -->
+
+    <div class="container mt-5">
+
+
+        <!--Section: Content-->
+        <section class="">
+
+            <!-- Section heading -->
+            <h3 class="text-center font-weight-bold mb-5 text-white">Your Garden</h3>
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+
+                    <!-- Card -->
+                    <div class="card hoverable">
+
+                        <!-- Card image -->
+                        <img id="plantImageAccount"class="card-img-top" src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                            alt="Card image cap">
+
+                        <!-- Card content -->
+                        <div class="card-body" style="background-color: #000000;">
+
+                            <!-- Title -->
+                          <h2 style="color: #fff;">Plant commom name goes here</h2>
+                            <!-- Text -->
+                            <p class="card-title text-muted font-small mt-3 mb-2">All the data from API goes here.</p>
+
+                            <button id="deletePlant" type="button" class="btn btn-success">DELETE<i
+                                    class="fa fa-angle-right ml-2"></i></button>
+
+                        </div>
+
+                    </div>
+                    <!-- Card -->
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                 <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+
+                    <!-- Card -->
+                    <div class="card hoverable">
+
+                        <!-- Card image -->
+                        <img id="plantImageAccount"class="card-img-top" src="https://images.unsplash.com/photo-1471696035578-3d8c78d99684?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                            alt="Card image cap">
+
+                        <!-- Card content -->
+                        <div class="card-body" style="background-color: #000000;">
+
+                            <!-- Title -->
+                          <h2 style="color: #fff;">Plant commom name goes here</h2>
+                            <!-- Text -->
+                            <p class="card-title text-muted font-small mt-3 mb-2 text-white">All the data from API goes here.</p>
+
+                            <button id="deletePlant" type="button" class="btn btn-success">DELETE<i
+                                    class="fa fa-angle-right ml-2"></i></button>
+
+                        </div>
+
+                    </div>
+                    <!-- Card -->
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                 <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+
+                    <!-- Card -->
+                    <div class="card hoverable">
+
+                        <!-- Card image -->
+                        <img id="plantImageAccount"class="card-img-top" src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                            alt="Card image cap">
+
+                        <!-- Card content -->
+                        <div class="card-body"style="background-color: #000000;">
+
+                            <!-- Title -->
+                          <h2 style="color: #fff;">Plant commom name goes here</h2>
+                            <!-- Text -->
+                            <p class="card-title text-muted font-small mt-3 mb-2">All the data from API goes here.</p>
+
+                            <button id="deletePlant" type="button"class="btn btn-success">DELETE<i
+                                    class="fa fa-angle-right ml-2"></i></button>
+
+                        </div>
+
+                    </div>
+                    <!-- Card -->
+
+                </div>
+
+            </div>
+            <!-- Grid row -->
+
+
+
+        </section>
+        <!--Section: Content-->
+
+
+    </div>
+<br>
+<br>
+<br>
+
+</body>
