@@ -30,4 +30,8 @@ module.exports = function(app) {
   app.get("/results", isAuthenticated, (req, res) => {
     res.render("results")
   });
+  
+  app.get("/myAccount", isAuthenticated, (req, res) => {
+    res.render("myAccount")
+  });
 };
