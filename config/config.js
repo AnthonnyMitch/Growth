@@ -4,10 +4,10 @@ require('dotenv').config();
 module.exports = {
   "development": {
 
-    "username": "root",
-    "password": "Candolio94*",
-    "database": "plants",
-    "host": "localhost",
+    "username":"fy7pbbrkyw1tptn9",
+    "password": "d5vaee9zjw5kvqp0",
+    "database": "ut8hr2ydzksiu277",
+    "host": "vrk7xcrab1wsx4r1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
 
      "dialect": "mysql"
   },
