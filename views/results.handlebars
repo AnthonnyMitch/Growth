@@ -42,6 +42,22 @@
         border-top: 3px solid #fff;
         width: 80px;
     }
+
+    #plantImage0,
+    #plantImage1,
+    #plantImage2,
+    #plantImage3,
+    #plantImage4,
+    #plantImage5,
+    #plantImage6,
+    #plantImage7,
+    #plantImage8 {
+        padding: 15px;
+        border-radius: 5px;
+        width: 250px;
+        height: 220px;
+    }
+
 </style>
 
 <!-- Main navigation -->
@@ -61,7 +77,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./myAccount">My account</a>
-                    </li> 
+                    </li>
                 </ul>
             </div>
         </div>
@@ -103,7 +119,7 @@
 </header>
 <div class="container my-5 p-5 z-depth-1 black">
 
-    <div class="container mt-5">
+    <div id="mainContainer" class="container mt-5 container row">
 
 
         <!--Section: Content-->
@@ -114,9 +130,13 @@
             <!-- Section description -->
             <h2 id="scientificName" class="text-center mx-auto w-responsive mb-5"> </h2>
 
+             <!-- Post title -->
+            <p id="familyName" class="text-center font-weight-bold mb-3"><strong></strong></p>
+
             <!-- Grid row -->
             <div class="row align-items-center">
 
+                
                 <!-- Grid column -->
                 <div class="col-lg-5">
 
@@ -136,12 +156,22 @@
 
                     <!-- Category -->
                     <a href="#!" class="green-text">
-                        <h6 class="font-weight-bold mb-3"><i class="fas fa-leaf pr-2"></i>Plant</h6>
+                        <h6 class="font-weight-bold mb-3"><i class="fas fa-leaf pr-2"></i>Growth</h6>
                     </a>
-                    <!-- Post title -->
-                    <h3 id="familyName" class="font-weight-bold mb-3"><strong></strong></h3>
-                    <!-- Excerpt -->
-                    <p id= "plantLink"> </p>
+                       
+                       <!-- Excerpt -->
+
+                    <p id="height"> </p>
+                    <p id="growthHabit"> </p>
+                    <p id="edibleParts"> </p>
+                    <p id="light"> </p>
+                    <p id="ph"> </p>
+                    <p id="precipitations"> </p>
+                    <p id="soilNutriments"></p>
+                    <p id="soilSalinity"> </p>
+                    <p id="soilTexture"> </p>
+
+                   
                     <!-- add to garden button -->
                     <a class="btn btn-success btn-md btn-rounded mx-0">ADD TO GARDEN</a>
 
