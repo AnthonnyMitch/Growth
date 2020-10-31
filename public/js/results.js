@@ -90,6 +90,22 @@ function searchPlants(searchValue) {
 
 
 function chosenPlant(slug) {
+  e.preventDefault();
+  // make main box go blank with each click
+  $("#mainContainer").html("")
+  $("#plantImage").html("")
+  $("#commonName").html("")
+  $("#scientificName").html("")
+  $("#familyName").html("")
+  $("height").html("")
+  $("growthHabit").html("")
+  $("edibleParts").html("")
+  $("light").html("")
+  $("ph").html("")
+  $("precipitations").html("")
+  $("soilNutriments").html("")
+  $("soilSalinity").html("")
+  $("soilTexture").html("")
   console.log(slug);
 
   //we then call the api and pass the searchValue into the url
@@ -103,60 +119,49 @@ function chosenPlant(slug) {
     .then(function (response) {
       console.log(response);
 
-      //   // create divs with id's to append image tags to
-      //   // var chosenDiv = $("<div>");
+      //create divs with id's to append image tags to
+      var chosenDiv = $("<div>");
 
 
 
-      //   // give each plantDiv an id
-      //   // chosenDiv.attr("id", "chosenDiv");
-      //   // chosenDiv.addClass("col");
+      //give each plantDiv an id
+      chosenDiv.attr("id", "chosenDiv");
+      chosenDiv.addClass("col");
 
 
 
-      //   // append all plantDivs to mainContainer
-      //   // $("#mainContainer").append(chosenDiv);
+      //append all plantDivs to mainContainer
+      $("#mainContainer").append(chosenDiv);
+
+
+
+        //create variable for desired elements to be created dynamically 
+
+      for (let i = 0; i < response.data.length; i++) {
+        var plantImage = $("<img>");
+        var commonName = $("<h2>");
+        var column = $("<div class='col'>");
+        var row = $("<div class='row'>");
+
+
+        //set each varibale elemeents value and attribute to the corresponding data element 
+
+        // commonName.text(response.data[i].common_name);
+        // plantImage.attr("src", response.data[i].image_url);
+        // plantImage.attr("data-slug", response.data[i].slug);
+        // plantImage.attr("class", "plantImage");
+
+
+        //append all dynamically created elements to the mainContainer div. 
+        // $("#chosenDiv").append(row);
+        // row.append(column);
+        // column.append(plantImage, commonName);
+      }
+
+
+
 
     })
-
-
-  // //new img tag variable
-
-
-  // for (let i = 0; i < response.data.length; i++) {
-  //   var plantThumb = $("<img>");
-  //   var chosenName = $("<h1>");
-  //   var scientificName = $("<h2>");
-  //   var family = $("<h3>");
-  //   var height = $("<p>");
-  //   var growthHabit = $("<p>");
-  //   var edibleParts = $("<p>");
-  //   var light = $("<p>");
-  //   var ph = $("<p>");
-  //   var precipitations = $("<p>");
-  //   var soilNutriments = $("<p>");
-  //   var soilSalinity = $("<p>");
-  //   var soilTexture = $("<p>");
-  //   // var plantLink = $("<a>")
-
-
-
-  //   chosenName.text(response.data[i].common_name);
-  //   plantThumb.attr("src", response.data[i].image_url);
-  //   plantThumb.attr("data-slug", response.data[i].slug);
-  //   plantThumb.attr("class", "plantThumb");
-
-  //   $("#plantDiv").append(row);
-  //   row.append(column);
-  //   column.append(plantImage, commonName);
-
-  // }
-
-
-  // $(".plantImage").click(function () {
-  //   chosenPlant($(this).data("slug"))
-  // });
-
 }
 
 
