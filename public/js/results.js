@@ -40,77 +40,124 @@ function searchPlants(searchValue) {
   }).then(function (response) {
     console.log(response);
     //create divs with id's to append image tags to
-    var plantDiv0 = $("<div>");
-    var plantDiv1 = $("<div>");
-    var plantDiv2 = $("<div>");
+    var plantDiv = $("<div>");
+
 
 
     //give each plantDiv an id
-    plantDiv0.attr("id", "plantDiv0");
-    plantDiv0.addClass("col");
-    plantDiv1.attr("id", "plantDiv1");
-    plantDiv1.addClass("col");
-    plantDiv2.attr("id", "plantDiv2");
-    plantDiv2.addClass("col");
+    plantDiv.attr("id", "plantDiv");
+    plantDiv.addClass("col");
+
 
 
     //append all plantDivs to mainContainer
-    $("#mainContainer").append(plantDiv0);
-    $("#mainContainer").append(plantDiv1);
-    $("#mainContainer").append(plantDiv2);
+    $("#mainContainer").append(plantDiv);
 
 
 
-    //new img tag variable
-    var plantImage0 = $("<img>");
-    var plantImage1 = $("<img>");
-    var plantImage2 = $("<img>");
-    var commonName0 = $("<h2>");
-    var commonName1 = $("<h2>");
-    var commonName2 = $("<h2>");
+
+
+    for (let i = 0; i < 9; i++) {
+      var plantImage = $("<img>");
+      var commonName = $("<h2>");
+      var column = $("<div class='col'>");
+      var row = $("<div class='row'>");
 
 
 
-    //render first 10 returned response.data img_url(s) as images
-    commonName0.text(response.data[0].common_name);
-    plantImage0.attr("src", response.data[0].image_url);
-    plantImage0.attr("alt", response.data[0].slug);
-    plantImage0.attr("id", "plantImage0");
-    commonName1.text(response.data[1].common_name);
-    plantImage1.attr("src", response.data[1].image_url);
-    plantImage1.attr("alt", response.data[1].slug);
-    plantImage1.attr("id", "plantImage1");
-    commonName2.text(response.data[2].common_name);
-    plantImage2.attr("src", response.data[2].image_url);
-    plantImage2.attr("alt", response.data[2].slug);
-    plantImage2.attr("id", "plantImage2");
+      commonName.text(response.data[i].common_name);
+      plantImage.attr("src", response.data[i].image_url);
+      plantImage.attr("data-slug", response.data[i].slug);
+      plantImage.attr("class", "plantImage");
+
+
+      $("#plantDiv").append(row);
+      row.append(column);
+      column.append(plantImage, commonName);
+    }
 
 
 
-    //append the plantImages to the plantDivs
-    $("#plantDiv0").append(plantImage0, commonName0);
-    $("#plantDiv1").append(plantImage1, commonName1);
-    $("#plantDiv2").append(plantImage2, commonName2);
+    $(".plantImage").click(function () {
+      chosenPlant($(this).data("slug"));
 
-    //set a variable equal to all div ids
-
-    $("#plantDiv0").click(function () {
-      chosenPlant(response.data[0].slug);
     });
-    $("#plantDiv1").click(function () {
-      chosenPlant(response.data[1].slug);
-    });
-    $("#plantDiv2").click(function () {
-      chosenPlant(response.data[3].slug);
-    });
-
   })
 
-}
-function chosenPlant() {
-  console.log("hi");
-}
+};
 
+
+
+
+function chosenPlant(slug) {
+  console.log(slug);
+
+  //we then call the api and pass the searchValue into the url
+  $.ajax({
+
+    method: "GET",
+    url: "https://cors-anywhere.herokuapp.com/https://trefle.io/api/v1/plants/" + slug + "?&token=ueH6QtDHJicmWkAqaQBbzH12C_hf4rpSxtJXrMOE1n0",
+
+    //then start a function with the response object passed in
+  })
+    .then(function (response) {
+      console.log(response);
+
+      //   // create divs with id's to append image tags to
+      //   // var chosenDiv = $("<div>");
+
+
+
+      //   // give each plantDiv an id
+      //   // chosenDiv.attr("id", "chosenDiv");
+      //   // chosenDiv.addClass("col");
+
+
+
+      //   // append all plantDivs to mainContainer
+      //   // $("#mainContainer").append(chosenDiv);
+
+    })
+
+
+  // //new img tag variable
+
+
+  // for (let i = 0; i < response.data.length; i++) {
+  //   var plantThumb = $("<img>");
+  //   var chosenName = $("<h1>");
+  //   var scientificName = $("<h2>");
+  //   var family = $("<h3>");
+  //   var height = $("<p>");
+  //   var growthHabit = $("<p>");
+  //   var edibleParts = $("<p>");
+  //   var light = $("<p>");
+  //   var ph = $("<p>");
+  //   var precipitations = $("<p>");
+  //   var soilNutriments = $("<p>");
+  //   var soilSalinity = $("<p>");
+  //   var soilTexture = $("<p>");
+  //   // var plantLink = $("<a>")
+
+
+
+  //   chosenName.text(response.data[i].common_name);
+  //   plantThumb.attr("src", response.data[i].image_url);
+  //   plantThumb.attr("data-slug", response.data[i].slug);
+  //   plantThumb.attr("class", "plantThumb");
+
+  //   $("#plantDiv").append(row);
+  //   row.append(column);
+  //   column.append(plantImage, commonName);
+
+  // }
+
+
+  // $(".plantImage").click(function () {
+  //   chosenPlant($(this).data("slug"))
+  // });
+
+}
 
 
 
@@ -231,6 +278,3 @@ function chosenPlant() {
 
 
 
-      //select the object with an index of 0 and return it's entire object (data: 0)
-
-      //pull data from that object
