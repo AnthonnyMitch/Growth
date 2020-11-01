@@ -90,7 +90,7 @@ function searchPlants(searchValue) {
 
 
 function chosenPlant(slug) {
-  e.preventDefault();
+
   // make main box go blank with each click
   $("#mainContainer").html("")
   $("#plantImage").html("")
@@ -120,42 +120,44 @@ function chosenPlant(slug) {
       console.log(response);
 
       //create divs with id's to append image tags to
-      var chosenDiv = $("<div>");
+      var leftDiv = $("<div>");
+      var rightDiv = $("<div>");
+      leftDiv.attr("id", "leftDiv");
+      leftDiv.addClass("col");
+      rightDiv.attr("id", "rightDiv");
+      rightDiv.addClass("col");
 
 
 
-      //give each plantDiv an id
-      chosenDiv.attr("id", "chosenDiv");
-      chosenDiv.addClass("col");
 
-
-
-      //append all plantDivs to mainContainer
-      $("#mainContainer").append(chosenDiv);
-
-
-
-        //create variable for desired elements to be created dynamically 
-
+      //create variable for desired elements to be created dynamically 
+      //left div elements 
       for (let i = 0; i < response.data.length; i++) {
-        var plantImage = $("<img>");
+        var chosenImage = $("<img>");
         var commonName = $("<h2>");
-        var column = $("<div class='col'>");
-        var row = $("<div class='row'>");
+        // var column = $("<div class='col'>");
+        // var row = $("<div class='row'>");
 
 
         //set each varibale elemeents value and attribute to the corresponding data element 
 
-        // commonName.text(response.data[i].common_name);
-        // plantImage.attr("src", response.data[i].image_url);
-        // plantImage.attr("data-slug", response.data[i].slug);
-        // plantImage.attr("class", "plantImage");
+        commonName.text(response.data[i].common_name);
+        chosenImage.attr("src", response.data[i].image_url);
+        chosenImage.attr("data-slug", response.data[i].slug);
+        chosenImage.attr("class", "plantImage");
 
 
         //append all dynamically created elements to the mainContainer div. 
         // $("#chosenDiv").append(row);
         // row.append(column);
         // column.append(plantImage, commonName);
+
+        $("leftDiv").append(commonName);
+        $("leftDiv").append(chosenImage);
+
+         //append all plantDivs to mainContainer
+      $("#mainContainer").append(leftDiv);
+      // $("#mainContainer").append(rightDiv);
       }
 
 
