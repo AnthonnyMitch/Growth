@@ -40,28 +40,24 @@ function searchPlants(searchValue) {
   }).then(function (response) {
     console.log(response);
     //create divs with id's to append image tags to
-    var plantDiv = $("<div>");
+    var divRow1 = $("<div>");
+   
 
 
 
     //give each plantDiv an id
-    plantDiv.attr("id", "plantDiv");
-    plantDiv.addClass("col");
-
-
-
-    //append all plantDivs to mainContainer
-    $("#mainContainer").append(plantDiv);
+    divRow1.attr("class", "row")
+ 
 
 
 
 
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 16; i++) {
       var plantImage = $("<img>");
-      var commonName = $("<h2>");
-      var column = $("<div class='col'>");
-      var row = $("<div class='row'>");
+      var commonName = $("<h4>");
+      var totalDiv = $("<div>");
+      
 
 
 
@@ -69,11 +65,16 @@ function searchPlants(searchValue) {
       plantImage.attr("src", response.data[i].image_url);
       plantImage.attr("data-slug", response.data[i].slug);
       plantImage.attr("class", "plantImage");
+      totalDiv.attr("class", "col-s-4");
 
+      totalDiv.append(commonName, plantImage);
+      divRow1.append(totalDiv);
+     
+    
+  
 
-      $("#plantDiv").append(row);
-      row.append(column);
-      column.append(plantImage, commonName);
+      //append all plantDivs to mainContainer
+    $("#mainContainer").append(divRow1);
     }
 
 
@@ -148,8 +149,10 @@ function chosenPlant(slug) {
       var barkImage2 = $("<img>");
       var flowerImage2 = $("<img>");
       var fruitImage2 = $("<img>");
-      var imageDiv = $("<div>")
-      var imageDiv2 = $("<div>")
+      var imageDiv = $("<div>");
+      var imageDiv2 = $("<div>");
+      var saveButton = $("<a>");
+      var btnContainer = $("<div>");
 
       // loop over all data.sources
       for (let i = 0; i < response.data.sources.length; i++) {
@@ -162,15 +165,14 @@ function chosenPlant(slug) {
         }
 
 
-
-
-
         // var column = $("<div class='col'>");
         // var row = $("<div class='row'>");
 
 
         //set each varibale elemeents value and attribute to the corresponding data element
-
+        btnContainer.attr("class", "container row");
+        saveButton.text("ADD TO GARDEN");
+        saveButton.attr("class", "col btn btn-success btn-md btn-rounded mx-0 saveButton")
         commonName.text(response.data.common_name);
         scientificName.text(response.data.scientific_name);
         familyName.text(response.data.family.name);
@@ -186,13 +188,13 @@ function chosenPlant(slug) {
         imageDiv.attr("class", "imgDiv row")
         barkImage.attr("src", response.data.main_species.images.bark[0].image_url);
         barkImage.attr("data-slug", response.data.slug);
-        barkImage.attr("class", "col-sm-3 barkImage");
+        barkImage.attr("class", "col barkImage");
         flowerImage.attr("src", response.data.main_species.images.flower[0].image_url);
         flowerImage.attr("data-slug", response.data.slug);
-        flowerImage.attr("class", "col-m-3 flowerImage");
+        flowerImage.attr("class", "col flowerImage");
         fruitImage.attr("src", response.data.main_species.images.fruit[0].image_url);
         fruitImage.attr("data-slug", response.data.slug);
-        fruitImage.attr("class", "col-m-3 fruitImage");
+        fruitImage.attr("class", "col fruitImage");
         imageDiv2.attr("class", "row")
         barkImage2.attr("src", response.data.main_species.images.bark[1].image_url);
         barkImage2.attr("data-slug", response.data.slug);
@@ -223,11 +225,14 @@ function chosenPlant(slug) {
         rightDiv.append(USDAlink);
         imageDiv2.append(barkImage2, flowerImage2, fruitImage2);
         rightDiv.append(imageDiv2)
-
+        btnContainer.append(saveButton);
+        
 
         //    //append all plantDivs to mainContainer
         $("#mainContainer").append(leftDiv);
         $("#mainContainer").append(rightDiv);
+        $("#mainContainer").append(btnContainer);
+        
 
 
 
