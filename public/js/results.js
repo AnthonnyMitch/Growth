@@ -117,7 +117,7 @@ function chosenPlant(slug) {
     //then start a function with the response object passed in
   })
     .then(function (response) {
-      console.log(response);
+      console.log(response.data);
 
       //create divs with id's to append image tags to
       var leftDiv = $("<div>");
@@ -130,38 +130,70 @@ function chosenPlant(slug) {
 
 
 
-      //create variable for desired elements to be created dynamically 
-      //left div elements 
-      for (let i = 0; i < response.data.length; i++) {
-        var chosenImage = $("<img>");
-        var commonName = $("<h2>");
+
+      //left div elements
+      var chosenImage = $("<img>");
+      var commonName = $("<h1>");
+      var scientificName = $("<h4>");
+      var familyName = $("<h4>");
+      var observations = $("<h4>");
+      var bloomMonths = $("<h4>");
+      var phRange = $("<h4>");
+      var duration = $("<h4>")
+      var USDA = $("<a>")
+
+      for (let i = 0; i < response.data.sources.length; i++) {
+        if (response.data.sources.name === "USDA") {
+          var usdaUrl = this.url[0]
+        }
+        console.log(usdaUrl);
+
+
         // var column = $("<div class='col'>");
         // var row = $("<div class='row'>");
 
 
-        //set each varibale elemeents value and attribute to the corresponding data element 
+        //set each varibale elemeents value and attribute to the corresponding data element
 
-        commonName.text(response.data[i].common_name);
-        chosenImage.attr("src", response.data[i].image_url);
-        chosenImage.attr("data-slug", response.data[i].slug);
-        chosenImage.attr("class", "plantImage");
+        commonName.text(response.data.common_name);
+        scientificName.text(response.data.scientific_name);
+        familyName.text(response.data.family.name);
+        chosenImage.attr("src", response.data.image_url);
+        chosenImage.attr("data-slug", response.data.slug);
+        chosenImage.attr("class", "chosenImage");
+        observations.text("Native to: " + response.data.observations);
+        bloomMonths.text("Blooms best: " + response.data.main_species.growth.bloom_months);
+        phRange.text("Ph Range: " + response.data.main_species.growth.ph_minimum + " - " + response.data.main_species.growth.ph_maximum);
+        duration.text("duration: " + response.data.main_species.duration);
+        // USDA.text("See the USDA profile for this plant");
+        // USDA.attr("href", usdaUrl);
 
 
-        //append all dynamically created elements to the mainContainer div. 
+
+
+
+
+        //append all dynamically created elements to the mainContainer div.
         // $("#chosenDiv").append(row);
         // row.append(column);
         // column.append(plantImage, commonName);
 
-        $("leftDiv").append(commonName);
-        $("leftDiv").append(chosenImage);
+        leftDiv.append(commonName);
+        leftDiv.append(scientificName, familyName);
+        leftDiv.append(chosenImage);
+        rightDiv.append(observations);
+        rightDiv.append(bloomMonths);
+        rightDiv.append(phRange);
+        rightDiv.append(duration);
+        // rightDiv.append(USDA);
 
-         //append all plantDivs to mainContainer
-      $("#mainContainer").append(leftDiv);
-      // $("#mainContainer").append(rightDiv);
+        //    //append all plantDivs to mainContainer
+        $("#mainContainer").append(leftDiv);
+        $("#mainContainer").append(rightDiv);
+
+
+
       }
-
-
-
 
     })
 }
@@ -176,111 +208,6 @@ function chosenPlant(slug) {
 
 
 
-
-
-     //ignore code below, will be used for later functionality 
-
-
-       //create new variables equal to button tags,
-      // var plantTitle0 = $("<button>");
-      // var plantTitle1 = $("<button>");
-      // var plantTitle2 = $("<button>");
-      // var plantTitle3 = $("<button>");
-      // var plantTitle4 = $("<button>");
-      // var plantTitle5 = $("<button>");
-      // var plantTitle6 = $("<button>");
-      // var plantTitle7 = $("<button>");
-      // var plantTitle8 = $("<button>");
-
-      // // make each button's text the response.data[index].common_name
-
-
-
-
-
-      // plantTitle0.text(response.data[0].common_name);
-      // plantTitle0.attr("id", "plantTitle");
-      // plantTitle1.text(response.data[1].common_name);
-      // plantTitle1.attr("id", "plantTitle");
-      // plantTitle2.text(response.data[2].common_name);
-      // plantTitle2.attr("id", "plantTitle");
-      // plantTitle3.text(response.data[3].common_name);
-      // plantTitle3.attr("id", "plantTitle");
-      // plantTitle4.text(response.data[4].common_name);
-      // plantTitle4.attr("id", "plantTitle");
-      // plantTitle5.text(response.data[5].common_name);
-      // plantTitle5.attr("id", "plantTitle");
-      // plantTitle6.text(response.data[6].common_name);
-      // plantTitle6.attr("id", "plantTitle");
-      // plantTitle7.text(response.data[7].common_name);
-      // plantTitle7.attr("id", "plantTitle");
-      // plantTitle8.text(response.data[8].common_name);
-      // plantTitle8.attr("id", "plantTitle");
-
-      // // //append each button to desired plantImage[index] by id 
-
-      // $("#plantDiv0").append(plantTitle0);
-      // $("#plantDiv1").append(plantTitle1);
-      // $("#plantDiv2").append(plantTitle2);
-      // $("#plantDiv3").append(plantTitle3);
-      // $("#plantDiv4").append(plantTitle4);
-      // $("#plantDiv5").append(plantTitle5);
-      // $("#plantDiv6").append(plantTitle6);
-      // $("#plantDiv7").append(plantTitle7);
-      // $("#plantDiv8").append(plantTitle8);
-
-      //create an onclick event for each appended button that takes the slug within
-      // the "alt" attribute of the plantImage and adds it to a new api call (see ajax
-      //in notes) and return FULL object
-      //link data to  existing variables and render to page
-
-
-  //   })
-  // }
-
-
-      // //variables equal to newly created tags
-      // var plantThumb = $("<img>");
-      // var commonName = $("<h1>");
-      // var scientificName = $("<h2>");
-      // var family = $("<h3>");
-      // var height = $("<p>");
-      // var growthHabit = $("<p>");
-      // var edibleParts = $("<p>");
-      // var light = $("<p>");
-      // var ph = $("<p>");
-      // var precipitations = $("<p>");
-      // var soilNutriments = $("<p>");
-      // var soilSalinity = $("<p>");
-      // var soilTexture = $("<p>");
-      // // var plantLink = $("<a>")
-
-      // // pulling to create text
-      // commonName.text("Common Name: " + response.data[1].common_name)
-      // scientificName.text("Scientific Name: " + response.data[1].scientific_name)
-      // family.text("Family: " + response.data[1].family_common_name);
-      // plantThumb.attr("src", response.data[1].image_url);
-      // // plantLink.attr(response.data[1].sources.url);
-      // plantThumb.attr("width", "400px");
-      // plantThumb.attr("height", "400px");
-      // height.text()
-      // growthHabit.text()
-      // edibleParts.text()
-      // light.text()
-      // ph.text()
-      // precipitations.text()
-      // soilNutriments.text()
-      // soilSalinity.text()
-      // soilTexture.text(
-
-      // )
-      // // putting content on page
-      // $("#plantImage").append(plantThumb);
-      // $("#commonName").append(commonName);
-      // $("#scientificName").append(scientificName);
-      // $("#familyName").append(family);
-
-      // // $("#plantLink").append(plantLink);
 
 
 
