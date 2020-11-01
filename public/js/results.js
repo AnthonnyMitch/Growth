@@ -140,13 +140,29 @@ function chosenPlant(slug) {
       var bloomMonths = $("<h4>");
       var phRange = $("<h4>");
       var duration = $("<h4>")
-      var USDA = $("<a>")
+      var USDAlink = $("<a>")
+      var USDAurls = [];
+      var barkImage = $("<img>");
+      var flowerImage = $("<img>");
+      var fruitImage = $("<img>");
+      var barkImage2 = $("<img>");
+      var flowerImage2 = $("<img>");
+      var fruitImage2 = $("<img>");
+      var imageDiv = $("<div>")
+      var imageDiv2 = $("<div>")
 
+      // loop over all data.sources
       for (let i = 0; i < response.data.sources.length; i++) {
-        if (response.data.sources.name === "USDA") {
-          var usdaUrl = this.url[0]
+
+        var currSource = response.data.sources[i];
+
+        // if this name of the data.source is USDA
+        if (currSource.name == "USDA") {
+          USDAurls.push(currSource.url)
         }
-        console.log(usdaUrl);
+
+
+
 
 
         // var column = $("<div class='col'>");
@@ -165,10 +181,28 @@ function chosenPlant(slug) {
         bloomMonths.text("Blooms best: " + response.data.main_species.growth.bloom_months);
         phRange.text("Ph Range: " + response.data.main_species.growth.ph_minimum + " - " + response.data.main_species.growth.ph_maximum);
         duration.text("duration: " + response.data.main_species.duration);
-        // USDA.text("See the USDA profile for this plant");
-        // USDA.attr("href", usdaUrl);
-
-
+        USDAlink.text("See the USDA profile for this plant");
+        USDAlink.attr("href", USDAurls);
+        imageDiv.attr("class", "imgDiv row")
+        barkImage.attr("src", response.data.main_species.images.bark[0].image_url);
+        barkImage.attr("data-slug", response.data.slug);
+        barkImage.attr("class", "col-sm-3 barkImage");
+        flowerImage.attr("src", response.data.main_species.images.flower[0].image_url);
+        flowerImage.attr("data-slug", response.data.slug);
+        flowerImage.attr("class", "col-m-3 flowerImage");
+        fruitImage.attr("src", response.data.main_species.images.fruit[0].image_url);
+        fruitImage.attr("data-slug", response.data.slug);
+        fruitImage.attr("class", "col-m-3 fruitImage");
+        imageDiv2.attr("class", "row")
+        barkImage2.attr("src", response.data.main_species.images.bark[1].image_url);
+        barkImage2.attr("data-slug", response.data.slug);
+        barkImage2.attr("class", "col barkImage");
+        flowerImage2.attr("src", response.data.main_species.images.flower[1].image_url);
+        flowerImage2.attr("data-slug", response.data.slug);
+        flowerImage2.attr("class", "col flowerImage");
+        fruitImage2.attr("src", response.data.main_species.images.fruit[1].image_url);
+        fruitImage2.attr("data-slug", response.data.slug);
+        fruitImage2.attr("class", "col fruitImage");
 
 
 
@@ -177,7 +211,8 @@ function chosenPlant(slug) {
         // $("#chosenDiv").append(row);
         // row.append(column);
         // column.append(plantImage, commonName);
-
+        imageDiv.append(barkImage, flowerImage, fruitImage);
+        rightDiv.append(imageDiv)
         leftDiv.append(commonName);
         leftDiv.append(scientificName, familyName);
         leftDiv.append(chosenImage);
@@ -185,7 +220,10 @@ function chosenPlant(slug) {
         rightDiv.append(bloomMonths);
         rightDiv.append(phRange);
         rightDiv.append(duration);
-        // rightDiv.append(USDA);
+        rightDiv.append(USDAlink);
+        imageDiv2.append(barkImage2, flowerImage2, fruitImage2);
+        rightDiv.append(imageDiv2)
+
 
         //    //append all plantDivs to mainContainer
         $("#mainContainer").append(leftDiv);
@@ -194,6 +232,7 @@ function chosenPlant(slug) {
 
 
       }
+      
 
     })
 }
