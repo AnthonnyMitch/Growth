@@ -5,9 +5,7 @@
     .view {
         height: 100%;
     }
-
     @media (max-width: 740px) {
-
         html,
         body,
         header,
@@ -15,49 +13,54 @@
             height: 100vh;
         }
     }
-
     .top-nav-collapse {
         background-color: #000000 !important;
     }
-
     .navbar:not(.top-nav-collapse) {
         background: transparent !important;
     }
-
     @media (max-width: 991px) {
         .navbar:not(.top-nav-collapse) {
             background: #000000 !important;
         }
     }
-
     h1 {
         letter-spacing: 8px;
     }
-
     h5 {
         letter-spacing: 3px;
     }
-
     .hr-light {
         border-top: 3px solid #fff;
         width: 80px;
     }
-
-    #plantImage0,
-    #plantImage1,
-    #plantImage2,
-    #plantImage3,
-    #plantImage4,
-    #plantImage5,
-    #plantImage6,
-    #plantImage7,
-    #plantImage8 {
+    .plantImage
+     {
         padding: 15px;
         border-radius: 5px;
         width: 250px;
         height: 220px;
     }
-
+   
+    .chosenImage
+     {
+        padding: 15px;
+        border-radius: 5px;
+        width: 360px;
+        height: 400px;
+    }
+    .barkImage,
+    .flowerImage,
+    .fruitImage {
+         width: 150px;
+        height: 170px;
+        padding: 10px;
+    }
+.logo {
+    position: relative;
+    left: 450px;
+}
+   
 </style>
 
 <!-- Main navigation -->
@@ -126,7 +129,7 @@
         <section class="white-text">
 
             <!-- Section heading -->
-            <h1 id="commonName" class="text-center font-weight-bold mb-4 pb-2" style="color: green;"></h1>
+            <h1 id="commonName" class="col text-center font-weight-bold mb-4 pb-2" style="color: green;"></h1>
             <!-- Section description -->
             <h2 id="scientificName" class="text-center mx-auto w-responsive mb-5"> </h2>
 
@@ -156,24 +159,10 @@
 
                     <!-- Category -->
                     <a href="#!" class="green-text">
-                        <h6 class="font-weight-bold mb-3"><i class="fas fa-leaf pr-2"></i>Growth</h6>
+                        <h6 class=" logo font-weight-bold mb-3"><i class="fas fa-leaf pr-2"></i>Growth</h6>
                     </a>
                        
-                       <!-- Excerpt -->
-
-                    <p id="height"> </p>
-                    <p id="growthHabit"> </p>
-                    <p id="edibleParts"> </p>
-                    <p id="light"> </p>
-                    <p id="ph"> </p>
-                    <p id="precipitations"> </p>
-                    <p id="soilNutriments"></p>
-                    <p id="soilSalinity"> </p>
-                    <p id="soilTexture"> </p>
-
-                   
-                    <!-- add to garden button -->
-                    <a class="btn btn-success btn-md btn-rounded mx-0">ADD TO GARDEN</a>
+                       
 
                 </div>
                 <!-- Grid column -->
